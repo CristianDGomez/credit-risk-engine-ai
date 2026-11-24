@@ -32,3 +32,10 @@ Este proyecto demuestra una arquitectura híbrida en 3 etapas:
                                                            │
                                                            ▼
                                                Dictamen Técnico Ejecutivo
+
+### 4. Alerta Preventiva de Cobranza y Control de Exposición (`4_alerta_cobranza_preventiva.py`)
+Módulo de monitoreo continuo diseñado para auditar carteras masivas (550.000+ registros) en milisegundos utilizando consultas analíticas en **DuckDB** sin saturar la memoria RAM.
+
+* **Segmentación de Mora Temprana:** Clasifica automáticamente las cuentas activas según su comportamiento de pago (`1 a 7 días` para alerta preventiva y `8 a 30 días` para gestión de cobranza activa).
+* **Bloqueo Preventivo de Despacho:** Identifica cuentas con mora superior a 30 días o con un uso del cupo crediticio igual o mayor al **85%**, permitiendo frenar nuevos despachos antes de que se agrave el incobrable.
+* **Cuantificación de Capital en Riesgo:** Agrupa por rubro comercial y calcula en tiempo real el capital total expuesto (en millones de ARS), priorizando los sectores críticos para la toma de decisiones del área de créditos y cobranzas.

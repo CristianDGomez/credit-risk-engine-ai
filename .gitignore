@@ -1,0 +1,15 @@
+# Entorno virtual y caché de Python
+venv/
+__pycache__/
+*.py[cod]
+
+# Bases de datos y archivos locales pesados
+*.txt
+!requirements.txt
+*.csv
+*.db
+*.duckdb
+
+# Archivos del sistema macOS y variables de entorno
+.DS_Store
+.env
